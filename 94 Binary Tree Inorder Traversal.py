@@ -29,9 +29,9 @@ class Solution:
     def inorderTraversal(self, root: Optional[TreeNode]) -> List[int]:
         result = []
         stack = []
-        
-        if root == None:
-            return []
+        # 这两句是多余的，因为root是None，则直接返回空的result
+        #if root == None:
+            #return []
 
         while root or stack:
             # 如果节点存在就压栈，然后左走
