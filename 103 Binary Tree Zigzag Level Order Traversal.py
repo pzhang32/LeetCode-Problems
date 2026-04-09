@@ -8,7 +8,7 @@ class Solution:
     def zigzagLevelOrder(self, root: Optional[TreeNode]) -> List[List[int]]:
         result = []
         queue = [root]
-        is_even = 0
+        level = 0
 
         if root == None:
             return []
@@ -22,9 +22,9 @@ class Solution:
                     queue.append(node.left)
                 if node.right:
                     queue.append(node.right)
-            if is_even % 2 == 1:
+            if level % 2 == 1:
                 inter_res.reverse()
             result.append(inter_res)
-            is_even += 1
+            level += 1
 
         return result
